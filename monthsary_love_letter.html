@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love | Monthsary Message</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for romantic icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        roseGold: {
+                            50: '#fcf6f5',
+                            100: '#f7eae6',
+                            200: '#edd5cc',
+                            300: '#dfb7a8',
+                            400: '#ce917b',
+                            500: '#bc7055',
+                            600: '#aa5c42',
+                            700: '#8e4b35',
+                            800: '#753e2d',
+                            900: '#613426',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121010;
+            color: #f7eae6;
+            overflow-x: hidden;
+        }
+        
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Floating hearts animation */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.6) rotate(0deg);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.8;
+            }
+            80% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -10vh;
+            color: rgba(206, 145, 123, 0.4);
+            animation: floatUp 8s linear infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Custom scrollbar for the letter essay */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(247, 234, 230, 0.05);
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(206, 145, 123, 0.3);
+            border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(206, 145, 123, 0.6);
+        }
+
+        .polaroid {
+            background: #fdfbf7;
+            color: #2c221e;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .polaroid:hover {
+            transform: translateY(-8px) rotate(1deg) scale(1.02);
+            box-shadow: 0 20px 45px rgba(188, 112, 85, 0.25);
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(188, 112, 85, 0.15);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-roseGold-400 selection:text-white relative">
+
+    <!-- Background Gradient Ambience -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-roseGold-800/10 via-roseGold-900/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+    <!-- Floating Hearts Container -->
+    <div id="hearts-container"></div>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex-grow flex items-center justify-center p-4 sm:p-6 md:p-8 relative z-10 w-full">
+
+        <!-- PAGE 1: Landing Page -->
+        <section id="page-1" class="w-full max-w-xl text-center transition-all duration-700 ease-in-out py-12">
+            <div class="space-y-8">
+                <!-- Small delicate subhead -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-roseGold-900/40 border border-roseGold-700/30 text-roseGold-300 text-xs sm:text-sm tracking-widest uppercase animate-pulse">
+                    <i class="fa-solid fa-heart text-xs"></i> Happy Monthsary
+                </div>
+
+                <!-- Main Headline -->
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-roseGold-50 leading-tight">
+                    "I've been missing you extra lately."
+                </h1>
+
+                <!-- Subtitle message -->
+                <p class="text-roseGold-200/80 text-base sm:text-lg max-w-md mx-auto font-light leading-relaxed">
+                    Every second apart only makes my heart lean closer to yours. I prepared a little piece of my heart just for you.
+                </p>
+
+                <!-- Action Button -->
+                <div class="pt-6">
+                    <button onclick="openMessage()" class="group relative inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-roseGold-500 to-roseGold-600 text-white font-medium rounded-full shadow-lg shadow-roseGold-600/30 hover:shadow-xl hover:shadow-roseGold-500/40 hover:from-roseGold-400 hover:to-roseGold-500 transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer">
+                        <span class="tracking-wider text-sm sm:text-base">Open Message</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform duration-300"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: Transition & Letter Page (Initially Hidden) -->
+        <section id="page-2" class="hidden w-full max-w-5xl opacity-0 transition-all duration-1000 ease-out py-8">
+            
+            <!-- Top Header for Page 2 -->
+            <div class="text-center mb-10 space-y-2">
+                <button onclick="goBack()" class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-roseGold-300/70 hover:text-roseGold-200 transition-colors mb-4 bg-roseGold-900/30 px-3 py-1 rounded-full border border-roseGold-700/20">
+                    <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-roseGold-50">
+                    To My Dearest Love, Happy Monthsary
+                </h2>
+                <p class="text-roseGold-300/80 text-sm sm:text-base font-light italic">
+                    A few thoughts from my soul to yours...
+                </p>
+            </div>
+
+            <!-- Content Grid: Photos on Left/Top, Letter on Right/Bottom -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Pictures Column (Polaroids) -->
+                <div class="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col justify-center items-center gap-6 sm:gap-8">
+                    
+                    <!-- Polaroid 1 -->
+                    <div class="polaroid p-4 pb-6 rounded-sm w-64 sm:w-60 transform -rotate-2 hover:rotate-0 duration-300">
+                        <div class="relative w-full h-72 bg-roseGold-100 overflow-hidden rounded-sm group cursor-pointer" onclick="triggerPhotoModal(this)">
+                            <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80" alt="Romantic memory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x500/edd5cc/8e4b35?text=Our+Memory+1'">
+                            <div class="absolute inset-0 bg-roseGold-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white/90 text-roseGold-800 text-xs px-3 py-1.5 rounded-full font-medium shadow"><i class="fa-solid fa-expand mr-1"></i> View</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 text-center">
+                            <p class="font-serif italic text-roseGold-900 text-sm">"My favorite place is right beside you."</p>
+                            <span class="text-[10px] tracking-widest uppercase text-roseGold-600 font-semibold mt-1 block">Monthsary Date</span>
+                        </div>
+                    </div>
+
+                    <!-- Polaroid 2 -->
+                    <div class="polaroid p-4 pb-6 rounded-sm w-64 sm:w-60 transform rotate-2 hover:rotate-0 duration-300 sm:mt-4 lg:mt-0">
+                        <div class="relative w-full h-72 bg-roseGold-100 overflow-hidden rounded-sm group cursor-pointer" onclick="triggerPhotoModal(this)">
+                            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=600&q=80" alt="Romantic memory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x500/edd5cc/8e4b35?text=Our+Memory+2'">
+                            <div class="absolute inset-0 bg-roseGold-900/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                <span class="bg-white/90 text-roseGold-800 text-xs px-3 py-1.5 rounded-full font-medium shadow"><i class="fa-solid fa-expand mr-1"></i> View</span>
+                            </div>
+                        </div>
+                        <div class="pt-4 text-center">
+                            <p class="font-serif italic text-roseGold-900 text-sm">"Forever & always, my love."</p>
+                            <span class="text-[10px] tracking-widest uppercase text-roseGold-600 font-semibold mt-1 block">Endless Chapters</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Essay / Heartfelt Letter Container -->
+                <div class="lg:col-span-7">
+                    <div class="bg-[#1c1817]/90 border border-roseGold-700/20 rounded-2xl p-6 sm:p-8 md:p-10 glow-effect backdrop-blur-md relative">
+                        
+                        <!-- Decorative Quote Icon -->
+                        <div class="absolute top-6 right-8 text-roseGold-500/10 text-6xl font-serif pointer-events-none">
+                            <i class="fa-solid fa-quote-right"></i>
+                        </div>
+
+                        <!-- Letter Scrollable Content -->
+                        <div class="max-h-[460px] overflow-y-auto pr-3 sm:pr-4 space-y-6 text-roseGold-100/90 font-light text-base sm:text-lg leading-relaxed">
+                            <p class="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-roseGold-400 first-letter:mr-3 first-letter:float-left">
+                                My dearest love, as another month passes in our story, I find myself sitting here thinking about how completely wonderful my life has become since you walked into it. Even when the miles or busy days keep us apart for a little while, my heart never stops finding its way back to you.
+                            </p>
+                            
+                            <p>
+                                I've been missing you extra lately—in the quiet moments in the morning when my first thought is your smile, and in the late evenings when all I want is to hold your hand and talk about everything and nothing. Distance or time away only proves one undeniable truth: you are my home, my comfort, and my absolute favorite person in this entire world.
+                            </p>
+
+                            <p>
+                                Thank you for every single laugh we've shared, for the gentle way you understand my soul, and for loving me so purely. Every day with you feels like a gift I never knew I deserved. I cherish the memories we've built so far, and my heart beats with so much excitement for all the tomorrows we still have yet to write together.
+                            </p>
+
+                            <p>
+                                Happy monthsary, my love. No matter where we are or what we face, I am yours, completely and endlessly.
+                            </p>
+
+                            <div class="pt-6 border-t border-roseGold-800/40 mt-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                <div>
+                                    <p class="text-xs uppercase tracking-widest text-roseGold-400 font-medium">Forever Yours,</p>
+                                    <p class="font-serif text-2xl text-roseGold-100 mt-1 italic">With all my love & devotion</p>
+                                </div>
+                                <div class="text-roseGold-400 text-2xl animate-pulse">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-6 text-center text-xs text-roseGold-400/50 tracking-widest uppercase relative z-10">
+        Created with love for you &bull; Happy Monthsary
+    </footer>
+
+    <!-- Photo Modal Preview Overlay -->
+    <div id="photo-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300" onclick="closePhotoModal()">
+        <div class="relative max-w-lg w-full bg-[#1c1817] p-4 rounded-xl border border-roseGold-700/30 shadow-2xl transform scale-95 transition-transform duration-300" onclick="event.stopPropagation()">
+            <button onclick="closePhotoModal()" class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-roseGold-600 text-white flex items-center justify-center shadow-md hover:bg-roseGold-500 transition-colors z-10 cursor-pointer">
+                <i class="fa-solid fa-xmark text-sm"></i>
+            </button>
+            <div id="modal-content" class="text-center">
+                <img id="modal-img" src="" alt="Enlarged view" class="w-full h-auto max-h-[70vh] object-contain rounded-lg mb-4">
+                <p id="modal-caption" class="font-serif italic text-roseGold-200 text-lg">Our cherished memory</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Page Transitions, Hearts Generator & Modal -->
+    <script>
+        
+        // Generate floating hearts in the background
+        function createFloatingHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartIcons = ['fa-heart', 'fa-solid fa-heart', 'fa-regular fa-heart'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'absolute floating-heart';
+                heart.innerHTML = '<i class="fa-solid fa-heart"></i>';
+                
+                // Random position and animation duration
+                const randomX = Math.random() * window.innerWidth;
+                const size = Math.floor(Math.random() * 16) + 12; // 12px to 28px
+                const duration = Math.random() * 4 + 6; // 6s to 10s
+                
+                heart.style.left = `${randomX}px`;
+                heart.style.fontSize = `${size}px`;
+                heart.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(heart);
+                
+                // Clean up after animation finishes
+                setTimeout(() => {
+                    heart.remove();
+                }, duration * 1000);
+            }, 600);
+        }
+
+        // Trigger floating hearts on load
+        window.addEventListener('DOMContentLoaded', () => {
+            createFloatingHearts();
+        });
+
+        // Transition from Page 1 to Page 2
+        function openMessage() {
+            const page1 = document.getElementById('page-1');
+            const page2 = document.getElementById('page-2');
+
+            // Fade out page 1
+            page1.style.opacity = '0';
+            page1.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+                page1.classList.add('hidden');
+                page2.classList.remove('hidden');
+                
+                // Trigger reflow for smooth fade-in
+                void page2.offsetWidth;
+                
+                page2.style.opacity = '1';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 500);
+        }
+
+        // Return from Page 2 to Page 1
+        function goBack() {
+            const page1 = document.getElementById('page-1');
+            const page2 = document.getElementById('page-2');
+
+            page2.style.opacity = '0';
+            
+            setTimeout(() => {
+                page2.classList.add('hidden');
+                page1.classList.remove('hidden');
+                
+                void page1.offsetWidth;
+                
+                page1.style.opacity = '1';
+                page1.style.transform = 'translateY(0)';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 500);
+        }
+
+        // Polaroid image modal popup handler
+        function triggerPhotoModal(element) {
+            const imgEl = element.querySelector('img');
+            const modal = document.getElementById('photo-modal');
+            const modalImg = document.getElementById('modal-img');
+            
+            modalImg.src = imgEl.src;
+            modal.classList.remove('hidden');
+            
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modal.querySelector('div').classList.remove('scale-95');
+                modal.querySelector('div').classList.add('scale-100');
+            }, 10);
+        }
+
+        function closePhotoModal() {
+            const modal = document.getElementById('photo-modal');
+            modal.classList.add('opacity-0');
+            modal.querySelector('div').classList.remove('scale-100');
+            modal.querySelector('div').classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
